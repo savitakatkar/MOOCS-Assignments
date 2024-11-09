@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title> Personal Profile</title>
+        </head>
+        <style>
+            body{
+                background-color:darkslategray;
+
+            }
+            h2{
+                background-color:aquamarine;
+            }
+            lable{
+                background-color:cornflowerblue;
+            }
+           
+            
+        </style>
+        <body>
+            <h2>savita katkar</h2>
+            <form action="Submit.html">
+            <img src="c:\Users\prati\Downloads\WhatsApp Image 2024-10-17 at 4.23.38 PM.jpeg" alt="avatar" style="width:150px; height:150px"><br>   
+            
+           <lable for="address"><h3>Address:</h3><style>body{color:black;}</style></lable><br>
+           <p>At/post- jinti, 415111,Karad,India<br>Mobile: 9284637572<br>Email:katkarsavita250@gmail.com</p><br>
+           <lable for="education"><h3>Education:</h3></lable><br>
+           <p><b>Bachlor of Computer Application : </b>  Yashwantrao Mohite Institute Of Management Karad<br>2024<br><b>H.S.C</b><br>2021<br><b>S.S.C</b><br>2019</p><br>
+
+           <lable for="skills"><h3>Skills:</h3></lable><br>
+           <p>Java<br>MySQL<br>HTML<br>CSS<br>JavaScript<br>MS Excel<br>Power point</p><br>
+
+           <lable for="hobbies"><h3>Hobbies</h3></lable><br>
+           <br>Travaling<br>singing<br>playing</p><br>
+
+           <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="process_form.php" method="post">
+                <lable for="name">Your Name:</lable>
+                <input type="text" id="name" name="name" required><br>
+
+                <lable for="email">Your Email:</lable>
+                <input type="email" id="email" name="email" required><br>
+
+                <lable for="message">Your Message:</lable>
+                <textarea id="message" name="message" name="message" rows="6" required></textarea><br>
+           
+                <h3>Form Validation</h3>
+                <form id="myForm">
+                    <lable for="name">Name:</lable><br>
+                    <input type="text" id="name"  name="name"><br>
+                    <span id="nameError" class="error"></span><br>
+
+                    <lable for="email">Email:</lable><br>
+                    <input type="email" id="email"  name="email"><br>
+                    <span id="emailError" class="error"></span><br>
+                </form>
+               
+
+
+           <input type="submit" value="Submit">
+
+
+           <script>
+            document.getElementById("myForm").addEventListener("submit",function(event){
+                let valid = true;
+
+                const name = document.getElementById("name").value;
+                const nameError = document.getElementById("nameError");
+                if(name === ""){
+                    nameError.textContent = "Name is required";
+                    valid = false;
+                }
+                else{
+                    nameError.textContent = "";
+                }
+
+                const email = document.getElementById("email").value;
+                const emailError = document.getElementById("emailError");
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                if(!emailPattern.test(email)){
+                    emailError.textContent = "Enter a valid email address";
+                    valid = false;
+                }else{
+                    emailError.textContent="";
+                }
+                if(!valid){
+                    event.preventDefault();
+                }
+            });
+
+           </script>
+
+           </form>
+           </div>
+
+
+              </form>
+        </body>
+        </html>
